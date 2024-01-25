@@ -11,11 +11,18 @@ public class TurnCubeAsync : MonoBehaviour
 
     bool _isCanceled;
 
+    /// <summary>
+    /// Starts the async task.
+    /// </summary>
     public void StartTask()
     {
         RotateCube();
     }
 
+    /// <summary>
+    /// Same thing as the coroutine unless this time, if a bool is true, the task is stoped.
+    /// </summary>
+    /// <returns></returns>
     async Task RotateCube()
     {
         for (int i = 0; i < _rotationTime * 100; i++)
@@ -30,6 +37,9 @@ public class TurnCubeAsync : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Setting a bool to stop the task.
+    /// </summary>
     public void StopTask()
     {
         _isCanceled = true;
